@@ -1,0 +1,18 @@
+project Mailstop is
+
+   for Object_Dir use "build";
+   for Main use ("mailstop.adb");
+
+   package Prove is
+      for Switches use ("-j2", "--level=2");
+   end Prove;
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-fstack-check", "-gnatwa", "-gnata", "-g");
+   end Compiler;
+
+   package Linker is
+      for Default_Switches ("ada") use ("-g");
+   end Linker;
+
+end Mailstop;

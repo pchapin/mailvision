@@ -1,0 +1,20 @@
+
+References
+==========
+
+This file contains a list of references that are relevant to the Mail project. Please feel free
+to extend or update this list so that it is as complete and relevant as possible.
+
+RFC-1035 "Domain Names - Implementation and Specification"
+RFC-1939 "Post Office Protocol - Version 3"
+RFC-1957 "Some Observations on Implementations of the Post Office Protocol (POP3)"
+RFC-2045 "(MIME) Part One: Format of Internet Message Bodies"
+RFC-2046 "(MIME) Part Two: Media Types"
+RFC-2047 "(MIME) Part Three: Message Header Extensions for Non-ASCII Text"
+RFC-2049 "(MIME) Part Five: Conformance Criteria and Examples"
+RFC-2231 "MIME Parameter Value and Encoded Word Extensions: Character Sets, Languages, and Continuations"
+RFC-2449 "POP3 Extension Mechanism"
+RFC-2646 "The Text/Plain Format Parameter"
+RFC-3798 "Message Disposition Notification"
+RFC-5321 "Simple Mail Transfer Protocol"
+RFC-5322 "Internet Message Format"

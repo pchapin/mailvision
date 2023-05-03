@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!-- FILE   : XEmail.xsd
+     AUTHOR : Peter C. Chapin <PChapin@vtc.vsc.edu>
+     SUBJECT: XML schema for describing email messages.
+     
+This markup describes email messages. It is intended to be eventually be a replacement for the
+RFC-2822 + MIME standard. It has a long way to go.
+
+ -->
+
+<xs:schema xmlns="http://www.vtc.edu/XML/XEmail" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.vtc.edu/XML/XEmail">
+
+  <xs:element name="message-group">
+    <xs:annotation>
+      <xs:documentation>A message group contains a number of messages. One imagines that the
+        messages in a message group are related in some way (to the same recipient, from the
+        same sender, etc), but this schema does not intend to imply any specific relationship.
+        Each message in a message group is completely independent and fully
+      self-contained.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="message" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="message">
+    <xs:annotation>
+      <xs:documentation>A message element contains exactly one email message. All information
+        about the message is specified by this element. Message elements can serve as document
+        elements. It is possible to create a document containing a single message without first
+        enclosing it in a message-group.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="headerType"/>
+        <xs:element name="body" type="bodyType"/>
+        <xs:element name="attachment" type="attachmentType" minOccurs="0" maxOccurs="unbounded"
+        />
+      </xs:sequence>
+      <xs:attribute name="status" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="headerType">
+    <xs:annotation>
+      <xs:documentation>The type headerType describes elements that can contain the header
+        information normally present in email messages. The definition of headerType here is
+        incomplete. Ideally it should contain all the information that might be available in
+        RFC-2822 formatted email headers. It should probably also provide for MIME headers as
+        well (or should MIME headers be handled with a different element?)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="To" type="addressListType"/>
+      <xs:element name="Date" type="xs:dateTime"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="From" type="addressListType"/>
+        <xs:element name="MessageID" type="xs:string"/>
+        <xs:element name="References">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Reply-To" type="addressListType"/>
+        <xs:element name="Subject" type="xs:string"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bodyType">
+    <xs:annotation>
+      <xs:documentation>The bodyType is used to describe the structure of email message bodies.
+        Attachments are handled separately (instead of as nested formatting of body text as is
+        done with MIME).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:any namespace="http://www.w3.org/1999/xhtml" processContents="strict"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addressListType">
+    <xs:annotation>
+      <xs:documentation>The type addressListType is used to describe elements that can hold
+        lists of email addresses. Since email messages can contain many such lists it makes good
+        sense to break out the type separately like this.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="address" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="full-name" type="xs:string" minOccurs="0"/>
+            <xs:element name="email" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="attachmentType">
+    <xs:annotation>
+      <xs:documentation>The attachmentType describes attachments. The form of attachments is
+        more restricted in XEmail than it is in MIME. Only base64 encoding is
+      permitted.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:base64Binary">
+        <xs:attribute name="file-name" type="xs:string"/>
+        <xs:attribute name="mime-type" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>

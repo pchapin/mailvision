@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MailFlux" />
+		<Option pch_mode="2" />
+		<Option compiler="clang" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/MailFlux" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="clang" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/MailFlux" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="clang" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-pthread" />
+		</Compiler>
+		<Linker>
+			<Add library="ncurses" />
+			<Add library="pthread" />
+		</Linker>
+		<Unit filename="ClientConnection.cpp" />
+		<Unit filename="ClientConnection.hpp" />
+		<Unit filename="Console.cpp" />
+		<Unit filename="Console.hpp" />
+		<Unit filename="MailFlux.cpp" />
+		<Unit filename="Message.cpp" />
+		<Unit filename="Message.hpp" />
+		<Unit filename="ServerConnection.cpp" />
+		<Unit filename="ServerConnection.hpp" />
+		<Unit filename="Spool.cpp" />
+		<Unit filename="Spool.hpp" />
+		<Unit filename="config.cpp" />
+		<Unit filename="config.hpp" />
+		<Unit filename="istring.hpp" />
+		<Unit filename="support.cpp" />
+		<Unit filename="support.hpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

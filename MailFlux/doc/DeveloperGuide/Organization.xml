@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.docbook.org/xml/4.5/docbookx.dtd">
+  
+<chapter id="Organization">
+  <title>Organization of MailFlux</title>
+
+  <para>This chapter describes how MailFlux is organized at a high level. The basic packages
+    that comprise the program and how they interact are outlined. See the specific documentation
+    for each package, or the package's source code itself for details.</para>
+
+</chapter>

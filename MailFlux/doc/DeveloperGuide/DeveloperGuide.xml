@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "file:///C:/lib/docbook-dtd-4.5/docbookx.dtd" [
+
+<!ELEMENT xi:include (xi:fallback?) >
+<!ATTLIST xi:include
+    xmlns:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude"
+    href       CDATA      #REQUIRED
+    parse      (xml|text) "xml"
+    encoding   CDATA      #IMPLIED >
+<!ELEMENT xi:fallback ANY>
+<!ATTLIST xi:fallback
+    xmlsn:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude" >
+<!ENTITY % local.chapter.class "| xi:include">
+]>
+
+<!-- FILE   : DeveloperGuide.xml
+     SUBJECT: Master document for the MailFlux Developer Guide.
+     AUTHOR : (C) Copyright 2016 by Peter C. Chapin
+
+This is the documentation is for MailFlux developers. -->
+<book status="draft">
+  <bookinfo>
+    <title>MailFlux Developer's Guide</title>
+    <subtitle>Information for MailFlux Developers</subtitle>
+    <author>
+      <firstname>Peter</firstname>
+      <surname>Chapin</surname>
+      <othername role="mi">C.</othername>
+      <affiliation>
+        <orgname>Vermont Technical College</orgname>
+        <orgdiv>Computer Information Systems Department</orgdiv>
+      </affiliation>
+    </author>
+    <authorinitials>pcc</authorinitials>
+    <copyright>
+      <year>2016</year>
+      <holder>Peter C. Chapin</holder>
+    </copyright>
+    <legalnotice>
+      <para> Permission is granted to copy, distribute and/or modify this document under the
+        terms of the GNU Free Documentation License, Version 1.1 or any later version published
+        by the Free Software Foundation; with the Invariant Sections being LIST THEIR TITLES,
+        with the Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST. A copy
+        of the license is included in the section entitled "GNU Free Documentation License".
+      </para>
+    </legalnotice>
+    <!-- Do I really want to include this revision history? -->
+    <revhistory>
+      <revision>
+        <revnumber>0.0</revnumber>
+        <date>2016-01-01</date>
+        <authorinitials>pcc</authorinitials>
+        <revremark>Initial release (well, not really).</revremark>
+      </revision>
+    </revhistory>
+  </bookinfo>
+  <preface id="Introduction">
+    <title>Introduction</title>
+
+    <para>This document is for people interested in working on the MailFlux program itself. If
+      you are only interested in using MailFlux you do not need to read this document. If, on
+      the other hand, you are interested in extending MailFlux or in fixing a bug in the
+      MailFlux code base, you should review this document before you get started. This document
+      assumes you are already familiar with MailFlux and with the contents of the User's
+      Guide.</para>
+
+    <para>MailStop is written in Scala. It also makes use of a number of additional libraries
+      and tools, discussed in more detail elsewhere.</para>
+    
+    <para>MailFlux is covered by the unmodified GNU Public License. This basically means that
+      you are free to use it in any way that you wish as well as modify it as you desire. See
+      the file <filename>GPL.txt</filename> for more details. In addition, this document is also
+      free (as in speech) and may be distributed and modified under the terms of the GNU Free
+      Documentation License. See the file <filename>GFDL.txt</filename> for more details.</para>
+
+  </preface>
+
+  <xi:include href="Organization.xml"/>
+  <xi:include href="Build.xml"/>
+  <xi:include href="PackageDocumentation.xml"/>
+
+  <!-- <bibliography> ... </bibliography> -->
+
+</book>

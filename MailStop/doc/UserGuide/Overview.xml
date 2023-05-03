@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.docbook.org/xml/4.5/docbookx.dtd">
+  
+<chapter id="Overview">
+  <title>Overview of MailStop</title>
+
+  <section>
+    <title>Message Formats</title>
+
+    <para>MailStop handles email messages in two ways.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Raw Form</term>
+        <listitem>
+          <para>The raw form of an email message is the actual text of the message, complete
+            with all headers intact. This is the form of the message that is actually
+            transmitted over the network with SMTP and it includes the SMTP envelope as well as
+            the RFC-5322 header fields. Spacing, indentation, and line breaks are all considered
+            significant. The characaters in a raw form message are exactly as used on the
+            network (so, for example, any non-ASCII characters recieved are retained in raw form
+            messages).</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Abstract Form</term>
+        <listitem>
+          <para>The abstract form of an email message contains the semantic content of the
+            message organized in a form that is convenient to processing. It has been stripped
+            of incidental and irrelevant details of the raw form syntax. For example, headers
+            are handled as linked entities with well defined types and values, and not as
+            strings of raw unprocessed text.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>The act of converting a raw form message into abstract form is called "message
+      parsing." The act of converting an abstract form message into raw form is called "message
+      serializing." MailStop links abstract form messages to their corresponding raw form,
+      storing both forms in memory as necessary.</para>
+
+    <para>Conventional mail programs allow users to view and edit messages abstractly.
+      Conventional programs also usually allow users to view the raw form (with a "view source"
+      or similar option). However, conventional programs do not normally allow users to interact
+      with the raw form nor control the parsing or serializing process. MailStop does allow
+      these things.</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>MailStop reports all parsing errors and RFC violations when converting messages
+          from raw form to abstract form.</para>
+      </listitem>
+      <listitem>
+        <para>MailStop provides a "message inspector" that highlights parse errors and RFC
+          violations in the raw message. The message inspector also allows you to navigate the
+          message's structure (for example, highlighting the parts of a complex, nested
+          multipart message).</para>
+      </listitem>
+      <listitem>
+        <para>MailStop provides a "raw message editor" that allows you to edit raw form messages
+          directly. This editor can be used by experts to construct messages using features
+          unknown to MailStop's abstract message handler, or to create intentionally invalid
+          messages. Although MailStop will perform syntax analysis on manually edited raw
+          messages, it will not prevent you from constructing invalid messages since creating
+          such a message might be your intention.</para>
+      </listitem>
+      <listitem>
+        <para>MailStop gives you detailed control over the message serialization process. For
+          example you can manually select content types and content transfer encodings that
+          differ from MailStop's defaults. You can specify which header fields are used and the
+          order in which they are output. You can also rearrange the parts of a multipart
+          message using the "message explorer" tool.</para>
+      </listitem>
+      <listitem>
+        <para>MailStop allows you to save abstract form messages in an XML format for later
+          processing. This allows you to create powerful mail management tools that don't need
+          to parse or serialize the older mail formats based on RFC-5322.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>Messages created by MailStop will only have an abstract form initially. They are
+      serialized when they are sent or as necessary (for example if you use the message
+      inspector or message editor). Messages received by MailStop are stored in raw form and
+      parsed on demand. In general MailStop maintains both forms of every message, creating or
+      updating each form as necessary. Invalid messages may not parse fully so in general the
+      abstract form contains less information than the raw form. When storing or forwarding
+      messages MailStop gives you the choice of which form to use. For example if you forward an
+      invalid message, MailStop can optionally forward the message raw, retaining its invalid
+      form, or parse and re-serialize the message. In the second case MailStop forwards a valid
+      message that is not exactly identical to the original (although probably most of the
+      original content will be retained).</para>
+  </section>
+
+  <section>
+    <title>User Interface</title>
+
+    <para>MailStop supports two different user interface models. First, MailStop has a graphical
+      user interface (GUI) to support an interactive user. It is designed to be used for
+      day-to-day (d2d) mail needs and provides a way to read and compose messages as well as
+      access to an address book and a message folders. MailStop's d2d features are less advanced
+      than those of other mail programs since MailStop focuses on other kinds of features. Also
+      MailStop assumes its user is a highly technical individual who needs less coddling than
+      the average email user.</para>
+
+    <para>MailStop's GUI interface also provides views for the various novel features MailStop
+      supports: the message inspector, the raw message editor, and the message explorer.</para>
+
+    <para>Although the current version of MailStop uses the Gtk GUI library, a future version
+      may also provide the "GUI" interface using the curses terminal library or something
+      similar. This would allow MailStop to be used on a simple terminal device and free it from
+      the requirement of having access to a graphical display. However, the curses interface is
+      still a kind of GUI interface and it would cater to the same use cases as the Gtk
+      interface. The curses interface would be a mapping of the Gtk interface to curses.</para>
+
+    <para>In addition, MailStop also provides rich functionality via the command line. This
+      allows the application to be used in automated scripts to receive, process, verify, and
+      transmit mail without any user intervention. A future version of MailStop may even
+      incorporate a full featured embedded scripting language.</para>
+
+    <para>Finally, MailStop also exports a coherent, well documented collection of Ada packages
+      that can be used in other applications wishing to process email messages. The MailStop
+      package library is intended for use by applications with some other primary purpose
+      besides mail, but that need to deal with mail as a part of it's application. You can also
+      attach your own custom user interface to the MailStop library, using MailStop
+      functionality as the back end of your own mail program.</para>
+  </section>
+
+  <section>
+    <title>Extension Architecture</title>
+
+    <para>At the current time MailStop does not provide any sort of extension or "plugin"
+      architecture. Being a well documented open source program, it is my expectation that users
+      interested in extending MailStop's functionality will simply modify its source and build
+      their own custom version of the program. However, I acknowledge that not all mail experts
+      are necessarily programming experts. I mentioned in the previous section that MailStop
+      might one day acquire an embedded scripting language to automate some of its functions.
+      However, a plugin architecture (perhaps based on shared libraries?) that allows the
+      addition of new functionality, as opposed to just scripting existing functionality, might
+      be another future addition.</para>
+
+    <para>In addition MailStop currently does not provide many user configurable options. Much
+      of the behavior of the program is hard coded. This was done to simplify the task of
+      developing MailStop. I felt this was acceptable because of MailStop's small user community
+      (and thus that community's desires can be directly encoded in the program) and because,
+      being open source, users could configure and build their own custom version of the program
+      if necessary. Obviously, however, users will have different feelings about how the program
+      should be configured. To gain widespread acceptance, a future version of MailStop will
+      most like contain a richer collection of configurable items.</para>
+  </section>
+
+</chapter>

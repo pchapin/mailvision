@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+
+<!ELEMENT xi:include (xi:fallback?) >
+<!ATTLIST xi:include
+    xmlns:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude"
+    href       CDATA      #REQUIRED
+    parse      (xml|text) "xml"
+    encoding   CDATA      #IMPLIED >
+<!ELEMENT xi:fallback ANY>
+<!ATTLIST xi:fallback
+    xmlsn:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude" >
+<!ENTITY % local.chapter.class "| xi:include">
+]>
+
+<!-- FILE   : UserGuide.xml
+     SUBJECT: Master document for the MailStop User Guide.
+     AUTHOR : (C) Copyright 2017 by Peter C. Chapin
+
+This is the documentation is for MailStop users. -->
+<book status="draft">
+  <bookinfo>
+    <title>MailStop</title>
+    <subtitle>A Mail Client for Experts</subtitle>
+    <author>
+      <firstname>Peter</firstname>
+      <surname>Chapin</surname>
+      <othername role="mi">C.</othername>
+      <affiliation>
+        <orgname>Vermont Technical College</orgname>
+        <orgdiv>Computer Information Systems Department</orgdiv>
+      </affiliation>
+    </author>
+    <authorinitials>pcc</authorinitials>
+    <copyright>
+      <year>2017</year>
+      <holder>Peter C. Chapin</holder>
+    </copyright>
+    <legalnotice>
+      <para> Permission is granted to copy, distribute and/or modify this document under the
+        terms of the GNU Free Documentation License, Version 1.1 or any later version published
+        by the Free Software Foundation; with the Invariant Sections being LIST THEIR TITLES,
+        with the Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST. A copy
+        of the license is included in the section entitled "GNU Free Documentation License".
+      </para>
+    </legalnotice>
+    <!-- Do I really want to include this revision history? -->
+    <revhistory>
+      <revision>
+        <revnumber>0.0</revnumber>
+        <date>2020-01-01</date>
+        <authorinitials>pcc</authorinitials>
+        <revremark>Initial release (well, not really).</revremark>
+      </revision>
+    </revhistory>
+  </bookinfo>
+  <preface id="Introduction">
+    <title>Introduction</title>
+
+    <para>MailStop is an email client. Unlike most email clients that try to hide the underlying
+      structure of messages from their users, MailStop tries to expose that structure. What
+      makes MailStop different from other clients is that it assumes its users are (or are
+      interested in becoming) email experts. It thus allows the technical details of messages to
+      be viewed, navigated, and edited. MailStop allows you to explicit specify (and convert
+      between) various encoding methods, manipulate the nested subparts of complex multipart
+      messages, and edit extension headers on messages, to name a few features. MailStop also
+      allows you direct access to the low level email protocols it uses: SMTP, POP3, and IMAP.
+      In addition to supporting the features of a day to day email application, MailStop can be
+      used by mail administrators to help debug mail problems and by educators as an
+      instructional tool.</para>
+
+    <para>MailStop is covered by the GNU Public License. This basically means that you are free
+      to use it in any way that you wish as well as modify it as you desire. See the file
+        <filename>GPL.txt</filename> for more details. In addition, this document is also free
+      (as in speech) and may be distributed and modified under the terms of the GNU Free
+      Documentation License. See the file<filename>GFDL.txt</filename> for more details.</para>
+
+    <para>If you are interested in MailStop you might also be interested in MailFlux, an SMTP
+      server with similar design goals. MailFlux is a mail server for experts.</para>
+
+  </preface>
+
+  <xi:include href="Overview.xml"/>
+  <xi:include href="Standards.xml"/>
+
+  <!-- <bibliography> ... </bibliography> -->
+
+</book>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+
+<!ELEMENT xi:include (xi:fallback?) >
+<!ATTLIST xi:include
+xmlns:xi   CDATA          #FIXED     "http://www.w3.org/2001/XInclude"
+    href       CDATA      #REQUIRED
+    parse      (xml|text) "xml"
+    encoding   CDATA      #IMPLIED >
+<!ELEMENT xi:fallback ANY>
+<!ATTLIST xi:fallback
+    xmlsn:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude" >
+<!ENTITY % local.chapter.class "| xi:include">
+<!ENTITY % local.section.class "| xi:include">
+]>
+  
+<chapter id="PackageDocumentation">
+  <title>Package Documentation</title>
+
+  <para>This chapter provides low level details on the various packages used in MailStop. The
+    semantics and usage of each package is discussed.</para>
+
+  <section>
+    <title>Package <package>Editors</package></title>
+
+    <para>This package is just a container for all editor related code. MailStop contains a
+      number of editors. For example, mail message text can be edited with a general purpose
+      text editor. In addition, however, MailStop also provides specialized mini-editors for
+      editing message headers, encoded text, and other things. All the code, both low and high
+      level, supporting MailStop's editors is contained in the <package>Editors</package>
+      hierarchy.</para>
+
+  </section>
+
+</chapter>

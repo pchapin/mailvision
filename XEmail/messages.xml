@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="XEmail.xsl"?>
+<!-- FILE   : messages.xml
+     AUHTOR : Peter C. Chapin <PChapin@vtc.vsc.edu>
+     SUBJECT: Example email document.
+-->
+<email:message-group xmlns:email="http://www.vtc.edu/XML/XEmail"
+  xsi:schemaLocation="http://www.vtc.edu/XML/XEmail XEmail.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <email:message status="R">
+    <header>
+      <To>
+        <address>
+          <full-name>Sam Colwell</full-name>
+          <email>scolwell@lemuria.cis.vtc.edu</email>
+        </address>
+      </To>
+      <Date>2009-03-08T23:00:00-05:00</Date>
+      <From>
+        <address>
+          <full-name>Peter C. Chapin</full-name>
+          <email>Peter.Chapin@vtc.vsc.edu</email>
+        </address>
+      </From>
+      <Subject>This is a test message.</Subject>
+    </header>
+    <body>
+      <!-- The body of the message is a complete XHTML document. -->
+      <xhtml:html>
+        <xhtml:head>
+          <xhtml:title>Test Message</xhtml:title>
+        </xhtml:head>
+        <xhtml:body>
+          <xhtml:p>This is the first paragraph.</xhtml:p>
+          <xhtml:p>This is the second paragraph.</xhtml:p>
+          <xhtml:p>This schema requires that messages be formatted using XHTML. Applications
+            that process messages in this form could strip the XHTML formatting and produce
+            plain text. However, XHTML has the advantage of "working well" in the context of the
+            XEmail markup. XML namespaces are used to mix different vocabularies and to provide
+            full validation of the resulting mixed document.</xhtml:p>
+        </xhtml:body>
+      </xhtml:html>
+    </body>
+    <attachment file-name="abc.dat" mime-type="application/octet-stream">XaYbZcWd</attachment>
+    <attachment file-name="xyz.dat" mime-type="application/octet-stream"> AxByCw== </attachment>
+  </email:message>
+
+  <email:message>
+    <header>
+      <To>
+        <address>
+          <email>pchapin-cis3152@cis.vtc.edu</email>
+        </address>
+        <address>
+          <email>pchapin-cis4040@cis.vtc.edu</email>
+        </address>
+        <address>
+          <email>pchapin-cis4050@cis.vtc.edu</email>
+        </address>
+      </To>
+      <Date>2009-03-08T19:01:00-05:00</Date>
+      <From>
+        <address>
+          <full-name>Peter C. Chapin</full-name>
+          <email>pchapin@cis.vtc.edu</email>
+        </address>
+      </From>
+      <MessageID>0123456789ABCDEF@cis.vtc.edu</MessageID>
+      <References>
+        <ID>FEDCBA9876543210@vtc.vsc.edu</ID>
+        <ID>FEDCBA9876543210@cis.vtc.edu</ID>
+      </References>
+      <Subject>Only six weeks to go!</Subject>
+    </header>
+    <body>
+      <xhtml:html>
+        <xhtml:head>
+          <xhtml:title>Test Message</xhtml:title>
+        </xhtml:head>
+        <xhtml:body>
+          <xhtml:p>This is yet another message. It's very exciting isn't it?</xhtml:p>
+        </xhtml:body>
+      </xhtml:html>
+    </body>
+  </email:message>
+
+</email:message-group>

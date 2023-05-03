@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.docbook.org/xml/4.5/docbookx.dtd">
+  
+<chapter id="Build">
+  <title>Building MailFlux</title>
+
+  <para>This chapter describes how to build MailFlux and associated documentation. Currently the
+    tools used to create this application are as listed below. The version numbers given are for
+    the versions used by the MailFlux developers. Other versions of each tool may also work. In
+    addition, tools from other vendors may work although some of the build scripts and
+    configuration files would likely need to be updated first. This document does not describe
+    how to install these tools; consult the corresponding documentation for each tool for that
+    tool's installation instructions.</para>
+
+  <variablelist>
+    <title>Build Tools</title>
+
+    <varlistentry>
+      <term>Ada Compiler</term>
+      <listitem>
+        <para>GNAT GPL 2014. Certain GNAT extensions (mostly GNAT specific library packages and
+          GNAT's support for SPARK) are used. Currently no other Ada compiler is
+          supported.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>XSLT Styling Engine</term>
+      <listitem>
+        <para>Xalan v2.6.0. This is a Java program. The latest version can be downloaded from
+          the Apache Project site at <ulink url="http://xml.apache.org/"/>. In order to execute
+          Xalan you will also need a suitable Java runtime system installed.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>Formatting Object Processor</term>
+      <listitem>
+        <para>FOP v0.20.5. This is also a Java program. The latest version can be downloaded
+          from the Apache Project site at <ulink url="http://xml.apache.org/"/>. As with Xalan
+          you will also need a suitable Java runtime system installed in order to execute FOP.
+          Note that the current version of FOP is unfinished and it produces a number of errors
+          when used with the stylesheets below. These errors can be ignored. The resulting
+          document is servicable regardless.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>DocBook Stylesheets</term>
+      <listitem>
+        <para>Stylesheets from Norman Walsh.</para>
+      </listitem>
+    </varlistentry>
+
+  </variablelist>
+
+  <para>If you are not interested in rebuilding the documentation you do not need to read any
+    further in this chapter.</para>
+
+</chapter>

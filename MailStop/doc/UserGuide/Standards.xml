@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.docbook.org/xml/4.5/docbookx.dtd">
+
+<chapter id="Standards">
+  <title>Supported Standards</title>
+
+  <para>MailStop supports only open standards and evaluates incoming messages against those
+    standards. MailStop follows the traditional policy of all Internet client programs by trying
+    to accept any input that it can; however, MailStop will flag all standards violations that
+    it sees. Furthermore MailStop will not normally allow any standards violations to occur in
+    its outgoing communications.</para>
+
+  <note>
+    <para>MailStop does, however, have a raw message editor that allows you to edit outgoing
+      messages in arbitrary ways. In the raw message editor MailStop's normal enforcement of
+      mail standards is suspended. This allows you to experiment with sending various kinds of
+      "broken" messages to other mail systems as a way of checking the behavior of those systems
+      when getting such messages. It also allows you to (manually) use features that MailStop
+      does not currently know about.</para>
+  </note>
+
+  <para>There are many standards related to email and it seems like new ones are created every
+    month. MailStop can not know about every email standard. Since new standards are designed to
+    layer on top of old standards, MailStop will handle many of the new standards by just
+    leaving the data used by them uninterpreted. MailStop does allow you to view message text
+    directly so that you can interpret the data in the messages yourself if necessary.</para>
+
+  <para>The current version of MailStop understands the following standards.</para>
+
+  <itemizedlist>
+    <listitem>
+      <para>RFC-5321. Simple Mail Transfer Protocol. MailStop does not currently implement any
+        extensions.</para>
+    </listitem>
+
+    <listitem>
+      <para>RFC-1939, together with the RFCs that update it. Post Office Protocol v3. MailStop
+        supports this protocol fully but with no optional features.</para>
+    </listitem>
+
+    <listitem>
+      <para>RFC-5322. Internet Message Format. MailStop has direct understanding of all the
+        headers mentioned in the RFC, but no extension headers.</para>
+    </listitem>
+
+    <listitem>
+      <para>RFC-2045, RFC-2046, RFC-2047, and RFC-2049, together with the RFCs that update
+        these. Multipurpose Internet Mail Extensions (MIME). MailStop tries to support MIME
+        fully.</para>
+    </listitem>
+  </itemizedlist>
+
+  <para>Future versions of MailStop may also support other standards such as SMTP extensions,
+    digital signature and encryption standards, and various widely used extensions such as
+    mailing list headers, vcards, and other things. It is also planned that eventually MailStop
+    will support IMAP communications and the various standards associated with IMAP.</para>
+
+  <para>In addition, the format of email messages as defined by RFC-5322 is a very old format,
+    dating orginally back to the 1980s. A more modern approach to formatting structured and
+    semi-structured documents is to use XML. The <ulink url="http://www.openhealth.org/xmtp/"
+      >XMTP</ulink> proposal, as well as my own XEmail proposal are both attempts to to define
+    an XML format for email messages. MailStop currently uses XEmail as a format for storing
+    messages in abstract (post-parsed) form. A future version of MailStop may support XMTP as
+    well.</para>
+
+</chapter>

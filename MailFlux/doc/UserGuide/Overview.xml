@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.docbook.org/xml/4.5/docbookx.dtd">
+  
+<chapter id="Overview">
+  <title>Overview of MailFlux</title>
+
+  <section>
+    <title>Message Formats</title>
+
+    <para>
+      <emphasis>Write an overview...</emphasis>
+    </para>
+  </section>
+
+  <section>
+    <title>User Interface</title>
+
+    <para>MailFlux supports two different user interface models. First, MailFlux has a graphical
+      user interface (GUI) to support an interactive user. It is designed to be used for
+      day-to-day (d2d) SMTP debugging needs. MailFlux's GUI interface also provides views for
+      the various novel features MailFlux supports.</para>
+
+    <para>Although the current version of MailFlux uses the Gtk GUI library, a future version
+      may also provide the "GUI" interface using the curses terminal library or something
+      similar. This would allow MailFlux to be used on a simple terminal device and free it from
+      the requirement of having access to a graphical display. However, the curses interface is
+      still a kind of GUI interface and it would cater to the same use cases as the Gtk
+      interface. The curses interface would be a mapping of the Gtk interface to curses.</para>
+
+    <para>In addition, MailFlux also provides rich functionality via the command line. This
+      allows the application to be used in automated scripts. A future version of MailFlux may
+      even incorporate a full featured embedded scripting language.</para>
+
+    <para>Finally, MailFlux also exports a coherent, well documented collection of Ada packages
+      that can be used in other applications wishing to process email messages. The MailFlux
+      package library is intended for use by applications with some other primary purpose
+      besides mail, but that need to deal with mail as a part of it's application. You can also
+      attach your own custom user interface to the MailFlux library, using MailFlux
+      functionality as the back end of your own mail transport program.</para>
+  </section>
+
+  <section>
+    <title>Extension Architecture</title>
+
+    <para>At the current time MailFlux does not provide any sort of extension or "plugin"
+      architecture. Being a well documented open source program, it is my expectation that users
+      interested in extending MailFlux's functionality will simply modify its source and build
+      their own custom version of the program. However, I acknowledge that not all mail experts
+      are necessarily expert programmers. I mentioned in the previous section that MailFlux
+      might one day acquire an embedded scripting language to automate some of its functions.
+      However, a plugin architecture (perhaps based on shared libraries?) that allows the
+      addition of new functionality, as opposed to just scripting existing functionality, might
+      be another future addition.</para>
+
+    <para>In addition MailFlux currently does not provide many user configurable options. Much
+      of the behavior of the program is hard coded. This was done to simplify the task of
+      developing MailFlux. I felt this was acceptable because of MailFlux's small user community
+      (and thus that community's desires can be directly encoded in the program) and because,
+      being open source, users could configure and build their own custom version of the program
+      if necessary. Obviously, however, users will have different feelings about how the program
+      should be configured. To gain widespread acceptance, a future version of MailFlux will
+      most like contain a richer collection of configurable items.</para>
+  </section>
+
+</chapter>

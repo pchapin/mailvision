@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+
+<!ELEMENT xi:include (xi:fallback?) >
+<!ATTLIST xi:include
+    xmlns:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude"
+    href       CDATA      #REQUIRED
+    parse      (xml|text) "xml"
+    encoding   CDATA      #IMPLIED >
+<!ELEMENT xi:fallback ANY>
+<!ATTLIST xi:fallback
+    xmlsn:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude" >
+<!ENTITY % local.chapter.class "| xi:include">
+]>
+
+<!-- FILE   : UserGuide.xml
+     SUBJECT: Master document for the MailFlux User Guide.
+     AUTHOR : (C) Copyright 2014 by Peter C. Chapin
+
+This is the documentation is for MailFlux users. -->
+<book status="draft">
+  <bookinfo>
+    <title>MailFlux User's Guide</title>
+    <subtitle>An SMTP Server for Experts</subtitle>
+    <author>
+      <firstname>Peter</firstname>
+      <surname>Chapin</surname>
+      <othername role="mi">C.</othername>
+      <affiliation>
+        <orgname>Vermont Technical College</orgname>
+        <orgdiv>Computer Information Systems Department</orgdiv>
+      </affiliation>
+    </author>
+    <authorinitials>pcc</authorinitials>
+    <copyright>
+      <year>2016</year>
+      <holder>Peter C. Chapin</holder>
+    </copyright>
+    <legalnotice>
+      <para> Permission is granted to copy, distribute and/or modify this document under the
+        terms of the GNU Free Documentation License, Version 1.1 or any later version published
+        by the Free Software Foundation; with the Invariant Sections being LIST THEIR TITLES,
+        with the Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST. A copy
+        of the license is included in the section entitled "GNU Free Documentation License".
+      </para>
+    </legalnotice>
+    <!-- Do I really want to include this revision history? -->
+    <revhistory>
+      <revision>
+        <revnumber>0.0</revnumber>
+        <date>2016-01-01</date>
+        <authorinitials>pcc</authorinitials>
+        <revremark>Initial release (well, not really).</revremark>
+      </revision>
+    </revhistory>
+  </bookinfo>
+  <preface id="Introduction">
+    <title>Introduction</title>
+
+    <para>Most mail servers in use on the Internet today lack any kind of interactive user
+      interface. They receive mail, forward mail, and deliver mail without directly displaying
+      any information as they do so. Although mail servers typically write log files recording
+      the actions they take, using these files to debug problems or to monitor the SMTP
+      transactions as they occur is difficult.</para>
+
+    <para>MailFlux is a specialized mail server that addresses these limitations. It provides an
+      interactive console that the administrator can use to observe the behavior of the server
+      in real time as well as to dynamically reconfigure the server. MailFlux is primarily an
+      educational server, however it could also be used as a personal SMTP server or for
+      debugging SMTP problems. In that respect MailFlux has the potential for real application
+      outside the classroom.</para>
+
+    <para>This document describes how to use MailFlux, with special emphasis on the program's
+      unique features. The internal design of MailFlux is described in an accompanying
+      Developer's Guide. If you are a mail administrator interested in using MailFlux to debug
+      SMTP problems, or if you are a student interested in learning about the SMTP protocol,
+      then you should read just this User's Guide. If you are a developer interested extending
+      or enhancing MailFlux, then you should read both the User's Guide and the Developer's
+      Guide. All MailFlux users may be especially interested in reviewing the Future Directions
+      section of this guide to get an idea of what to expect in later versions of the
+      program.</para>
+
+    <para>MailFlux is covered by the GNU Public License. This basically means that you are free
+      to use it in any way that you wish as well as modify it as you desire. See the file
+        <filename>GPL.txt</filename> for more details. In addition, this document is also free
+      (as in speech) and may be distributed and modified under the terms of the GNU Free
+      Documentation License. See the file<filename>GFDL.txt</filename> for more details.</para>
+
+    <para>If you are interested in MailFlux you might also be interested in MailStop, an mail
+      client with similar design goals. MailStop is a mail user agent for experts.</para>
+
+  </preface>
+
+  <xi:include href="Overview.xml"/>
+  <xi:include href="Standards.xml"/>
+
+  <!-- <bibliography> ... </bibliography> -->
+
+</book>
