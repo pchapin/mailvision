@@ -18,8 +18,8 @@
             with all headers intact. This is the form of the message that is actually
             transmitted over the network with SMTP and it includes the SMTP envelope as well as
             the RFC-5322 header fields. Spacing, indentation, and line breaks are all considered
-            significant. The characaters in a raw form message are exactly as used on the
-            network (so, for example, any non-ASCII characters recieved are retained in raw form
+            significant. The characters in a raw form message are exactly as used on the
+            network (so, for example, any non-ASCII characters received are retained in raw form
             messages).</para>
         </listitem>
       </varlistentry>
@@ -56,7 +56,7 @@
         <para>MailStop provides a "message inspector" that highlights parse errors and RFC
           violations in the raw message. The message inspector also allows you to navigate the
           message's structure (for example, highlighting the parts of a complex, nested
-          multipart message).</para>
+          multi-part message).</para>
       </listitem>
       <listitem>
         <para>MailStop provides a "raw message editor" that allows you to edit raw form messages
@@ -130,13 +130,13 @@
   <section>
     <title>Extension Architecture</title>
 
-    <para>At the current time MailStop does not provide any sort of extension or "plugin"
+    <para>At the current time MailStop does not provide any sort of extension or "plug-in"
       architecture. Being a well documented open source program, it is my expectation that users
       interested in extending MailStop's functionality will simply modify its source and build
       their own custom version of the program. However, I acknowledge that not all mail experts
       are necessarily programming experts. I mentioned in the previous section that MailStop
       might one day acquire an embedded scripting language to automate some of its functions.
-      However, a plugin architecture (perhaps based on shared libraries?) that allows the
+      However, a plug-in architecture (perhaps based on shared libraries?) that allows the
       addition of new functionality, as opposed to just scripting existing functionality, might
       be another future addition.</para>
 

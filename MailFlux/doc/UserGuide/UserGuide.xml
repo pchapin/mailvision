@@ -16,7 +16,7 @@
 
 <!-- FILE   : UserGuide.xml
      SUBJECT: Master document for the MailFlux User Guide.
-     AUTHOR : (C) Copyright 2014 by Peter C. Chapin
+     AUTHOR : (C) Copyright 2023 by Peter C. Chapin
 
 This is the documentation is for MailFlux users. -->
 <book status="draft">
@@ -28,32 +28,15 @@ This is the documentation is for MailFlux users. -->
       <surname>Chapin</surname>
       <othername role="mi">C.</othername>
       <affiliation>
-        <orgname>Vermont Technical College</orgname>
+        <orgname>Vermont State University</orgname>
         <orgdiv>Computer Information Systems Department</orgdiv>
       </affiliation>
     </author>
     <authorinitials>pcc</authorinitials>
     <copyright>
-      <year>2016</year>
+      <year>2023</year>
       <holder>Peter C. Chapin</holder>
     </copyright>
-    <legalnotice>
-      <para> Permission is granted to copy, distribute and/or modify this document under the
-        terms of the GNU Free Documentation License, Version 1.1 or any later version published
-        by the Free Software Foundation; with the Invariant Sections being LIST THEIR TITLES,
-        with the Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST. A copy
-        of the license is included in the section entitled "GNU Free Documentation License".
-      </para>
-    </legalnotice>
-    <!-- Do I really want to include this revision history? -->
-    <revhistory>
-      <revision>
-        <revnumber>0.0</revnumber>
-        <date>2016-01-01</date>
-        <authorinitials>pcc</authorinitials>
-        <revremark>Initial release (well, not really).</revremark>
-      </revision>
-    </revhistory>
   </bookinfo>
   <preface id="Introduction">
     <title>Introduction</title>
@@ -75,17 +58,11 @@ This is the documentation is for MailFlux users. -->
       unique features. The internal design of MailFlux is described in an accompanying
       Developer's Guide. If you are a mail administrator interested in using MailFlux to debug
       SMTP problems, or if you are a student interested in learning about the SMTP protocol,
-      then you should read just this User's Guide. If you are a developer interested extending
-      or enhancing MailFlux, then you should read both the User's Guide and the Developer's
-      Guide. All MailFlux users may be especially interested in reviewing the Future Directions
-      section of this guide to get an idea of what to expect in later versions of the
+      then you should read just this User's Guide. If you are a developer interested in
+      extending or enhancing MailFlux, then you should read both the User's Guide and the
+      Developer's Guide. All MailFlux users may be especially interested in reviewing the Future
+      Directions section of this guide to get an idea of what to expect in later versions of the
       program.</para>
-
-    <para>MailFlux is covered by the GNU Public License. This basically means that you are free
-      to use it in any way that you wish as well as modify it as you desire. See the file
-        <filename>GPL.txt</filename> for more details. In addition, this document is also free
-      (as in speech) and may be distributed and modified under the terms of the GNU Free
-      Documentation License. See the file<filename>GFDL.txt</filename> for more details.</para>
 
     <para>If you are interested in MailFlux you might also be interested in MailStop, an mail
       client with similar design goals. MailStop is a mail user agent for experts.</para>

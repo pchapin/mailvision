@@ -5,8 +5,8 @@
 <chapter id="Organization">
   <title>Organization of MailFlux</title>
 
-  <para>This chapter describes how MailFlux is organized at a high level. The basic packages
-    that comprise the program and how they interact are outlined. See the specific documentation
-    for each package, or the package's source code itself for details.</para>
+  <para>This chapter describes how MailFlux is organized at a high level. The basic classes and
+    name spaces that comprise the program and how they interact are outlined. See the specific
+    documentation for each component, or the component's source code itself for details.</para>
 
 </chapter>

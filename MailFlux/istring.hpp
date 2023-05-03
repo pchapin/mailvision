@@ -34,10 +34,9 @@ struct ichar_traits : std::char_traits<char> {
     return( 0 );
   }
 
-  static const char_type *find
-    ( const char_type *s, size_t n, const char_type &a )
+  static const char_type *find( const char_type *s, size_t n, const char_type &a )
   {
-    const char_type *result = 0;
+    const char_type *result = nullptr;
     for( size_t i = 0; i < n; ++i ) {
       if( std::tolower( *s ) == std::tolower( a ) ) {
         result = s;
@@ -57,4 +56,3 @@ struct ichar_traits : std::char_traits<char> {
 typedef std::basic_string<char, ichar_traits> istring;
 
 #endif
-

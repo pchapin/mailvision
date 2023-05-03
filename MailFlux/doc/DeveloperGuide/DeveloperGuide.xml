@@ -16,7 +16,7 @@
 
 <!-- FILE   : DeveloperGuide.xml
      SUBJECT: Master document for the MailFlux Developer Guide.
-     AUTHOR : (C) Copyright 2016 by Peter C. Chapin
+     AUTHOR : (C) Copyright 2023 by Peter Chapin
 
 This is the documentation is for MailFlux developers. -->
 <book status="draft">
@@ -28,32 +28,15 @@ This is the documentation is for MailFlux developers. -->
       <surname>Chapin</surname>
       <othername role="mi">C.</othername>
       <affiliation>
-        <orgname>Vermont Technical College</orgname>
+        <orgname>Vermont State University</orgname>
         <orgdiv>Computer Information Systems Department</orgdiv>
       </affiliation>
     </author>
     <authorinitials>pcc</authorinitials>
     <copyright>
-      <year>2016</year>
-      <holder>Peter C. Chapin</holder>
+      <year>2023</year>
+      <holder>Peter Chapin</holder>
     </copyright>
-    <legalnotice>
-      <para> Permission is granted to copy, distribute and/or modify this document under the
-        terms of the GNU Free Documentation License, Version 1.1 or any later version published
-        by the Free Software Foundation; with the Invariant Sections being LIST THEIR TITLES,
-        with the Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST. A copy
-        of the license is included in the section entitled "GNU Free Documentation License".
-      </para>
-    </legalnotice>
-    <!-- Do I really want to include this revision history? -->
-    <revhistory>
-      <revision>
-        <revnumber>0.0</revnumber>
-        <date>2016-01-01</date>
-        <authorinitials>pcc</authorinitials>
-        <revremark>Initial release (well, not really).</revremark>
-      </revision>
-    </revhistory>
   </bookinfo>
   <preface id="Introduction">
     <title>Introduction</title>
@@ -65,14 +48,8 @@ This is the documentation is for MailFlux developers. -->
       assumes you are already familiar with MailFlux and with the contents of the User's
       Guide.</para>
 
-    <para>MailStop is written in Scala. It also makes use of a number of additional libraries
-      and tools, discussed in more detail elsewhere.</para>
-    
-    <para>MailFlux is covered by the unmodified GNU Public License. This basically means that
-      you are free to use it in any way that you wish as well as modify it as you desire. See
-      the file <filename>GPL.txt</filename> for more details. In addition, this document is also
-      free (as in speech) and may be distributed and modified under the terms of the GNU Free
-      Documentation License. See the file <filename>GFDL.txt</filename> for more details.</para>
+    <para>MailFlux is written in C++. Its companion program, MailStop, is written in Ada and is
+      documented separately.</para>
 
   </preface>
 

@@ -16,7 +16,7 @@
 
 <!-- FILE   : UserGuide.xml
      SUBJECT: Master document for the MailStop User Guide.
-     AUTHOR : (C) Copyright 2017 by Peter C. Chapin
+     AUTHOR : (C) Copyright 2023 by Peter C. Chapin
 
 This is the documentation is for MailStop users. -->
 <book status="draft">
@@ -34,26 +34,9 @@ This is the documentation is for MailStop users. -->
     </author>
     <authorinitials>pcc</authorinitials>
     <copyright>
-      <year>2017</year>
+      <year>2023</year>
       <holder>Peter C. Chapin</holder>
     </copyright>
-    <legalnotice>
-      <para> Permission is granted to copy, distribute and/or modify this document under the
-        terms of the GNU Free Documentation License, Version 1.1 or any later version published
-        by the Free Software Foundation; with the Invariant Sections being LIST THEIR TITLES,
-        with the Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST. A copy
-        of the license is included in the section entitled "GNU Free Documentation License".
-      </para>
-    </legalnotice>
-    <!-- Do I really want to include this revision history? -->
-    <revhistory>
-      <revision>
-        <revnumber>0.0</revnumber>
-        <date>2020-01-01</date>
-        <authorinitials>pcc</authorinitials>
-        <revremark>Initial release (well, not really).</revremark>
-      </revision>
-    </revhistory>
   </bookinfo>
   <preface id="Introduction">
     <title>Introduction</title>
@@ -69,12 +52,6 @@ This is the documentation is for MailStop users. -->
       In addition to supporting the features of a day to day email application, MailStop can be
       used by mail administrators to help debug mail problems and by educators as an
       instructional tool.</para>
-
-    <para>MailStop is covered by the GNU Public License. This basically means that you are free
-      to use it in any way that you wish as well as modify it as you desire. See the file
-        <filename>GPL.txt</filename> for more details. In addition, this document is also free
-      (as in speech) and may be distributed and modified under the terms of the GNU Free
-      Documentation License. See the file<filename>GFDL.txt</filename> for more details.</para>
 
     <para>If you are interested in MailStop you might also be interested in MailFlux, an SMTP
       server with similar design goals. MailFlux is a mail server for experts.</para>

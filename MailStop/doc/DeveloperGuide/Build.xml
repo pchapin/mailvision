@@ -26,30 +26,45 @@
     </varlistentry>
 
     <varlistentry>
+      <term>oXygen</term>
+      <listitem>
+        <para>The documentation is written in DocBook using the oXygen XML editor. It is not
+          necessary to use that particular XML editor. Any text editor could be used provided
+          you also install an XSTL styling engine, a formatting object processor, and DocBook
+          stylesheets. The oXygen tool comes with all of these things. However, oXygen is also a
+          commercial product.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
       <term>XSLT Styling Engine</term>
       <listitem>
-        <para>Xalan v2.6.0. This is a Java program. The latest version can be downloaded from
-          the Apache Project site at <ulink url="http://xml.apache.org/"/>. In order to execute
-          Xalan you will also need a suitable Java runtime system installed.</para>
+        <para>Xalan v2.6.0. This component is only needed if you are not using an XML editor
+          that comes with a styling engine built-in. This is a Java program. The latest version
+          can be downloaded from the Apache Project site at <ulink url="http://xml.apache.org/"
+          />. In order to execute Xalan you will also need a suitable Java runtime system
+          installed.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term>Formatting Object Processor</term>
       <listitem>
-        <para>FOP v0.20.5. This is also a Java program. The latest version can be downloaded
-          from the Apache Project site at <ulink url="http://xml.apache.org/"/>. As with Xalan
-          you will also need a suitable Java runtime system installed in order to execute FOP.
-          Note that the current version of FOP is unfinished and it produces a number of errors
-          when used with the stylesheets below. These errors can be ignored. The resulting
-          document is servicable regardless.</para>
+        <para>FOP v0.20.5. This component is only needed if you are not using an XML editor that
+          comes with a formatting object processor built-in. This is also a Java program. The
+          latest version can be downloaded from the Apache Project site at <ulink
+            url="http://xml.apache.org/"/>. As with Xalan you will also need a suitable Java
+          runtime system installed in order to execute FOP. Note that the current version of FOP
+          is unfinished and it produces a number of errors when used with the stylesheets below.
+          These errors can be ignored. The resulting document is servicable regardless.</para>
       </listitem>
     </varlistentry>
 
     <varlistentry>
       <term>DocBook Stylesheets</term>
       <listitem>
-        <para>Stylesheets from Norman Walsh.</para>
+        <para>Stylesheets from Norman Walsh. This component is only needed if you are not using
+          an XML editor that comes with DocBook stylesheets built-in. </para>
       </listitem>
     </varlistentry>
 

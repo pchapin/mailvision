@@ -18,8 +18,8 @@ xmlsn:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude" >
 <chapter id="PackageDocumentation">
   <title>Package Documentation</title>
 
-  <para>This chapter provides low level details on the various packages used in MailFlux.
-    The semantics and usage of each package is discussed.</para>
+  <para>This chapter provides low level details on the various packages used in MailFlux. The
+    semantics and usage of each package is discussed.</para>
 
   <!-- <xi:include href="XYZZY.xml"/> -->
 

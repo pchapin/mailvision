@@ -16,7 +16,7 @@
 
 <!-- FILE   : DeveloperGuide.xml
      SUBJECT: Master document for the MailStop Developer Guide.
-     AUTHOR : (C) Copyright 2017 by Peter C. Chapin
+     AUTHOR : (C) Copyright 2023 by Peter C. Chapin
 
 This is the documentation is for MailStop developers. -->
 <book status="draft">
@@ -28,49 +28,28 @@ This is the documentation is for MailStop developers. -->
       <surname>Chapin</surname>
       <othername role="mi">C.</othername>
       <affiliation>
-        <orgname>Vermont Technical College</orgname>
+        <orgname>Vermont State University</orgname>
         <orgdiv>Computer Information Systems Department</orgdiv>
       </affiliation>
     </author>
     <authorinitials>pcc</authorinitials>
     <copyright>
-      <year>2017</year>
+      <year>2023</year>
       <holder>Peter C. Chapin</holder>
     </copyright>
-    <legalnotice>
-      <para> Permission is granted to copy, distribute and/or modify this document under the terms
-        of the GNU Free Documentation License, Version 1.1 or any later version published by the
-        Free Software Foundation; with the Invariant Sections being LIST THEIR TITLES, with the
-        Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST. A copy of the
-        license is included in the section entitled "GNU Free Documentation License". </para>
-    </legalnotice>
-    <!-- Do I really want to include this revision history? -->
-    <revhistory>
-      <revision>
-        <revnumber>0.0</revnumber>
-        <date>2020-01-01</date>
-        <authorinitials>pcc</authorinitials>
-        <revremark>Initial release (well, not really).</revremark>
-      </revision>
-    </revhistory>
   </bookinfo>
   <preface id="Introduction">
     <title>Introduction</title>
 
-    <para>This document is for people interested in working on the MailStop program itself. If you
-      are only interested in using MailStop you do not need to read this document. If, on the other
-      hand, you are interested in extending MailStop or in fixing a fault in the MailStop code base,
-      you should review this document before you get started. This document assumes you are already
-      familiar with MailStop and with the contents of the User Guide.</para>
+    <para>This document is for people interested in working on the MailStop program itself. If
+      you are only interested in using MailStop you do not need to read this document. If, on
+      the other hand, you are interested in extending MailStop or in fixing a fault in the
+      MailStop code base, you should review this document before you get started. This document
+      assumes you are already familiar with MailStop and with the contents of the User
+      Guide.</para>
 
     <para>MailStop is written in Ada. It also makes use of a number of additional libraries and
       tools, discussed in more detail elsewhere.</para>
-
-    <para>MailStop is covered by the unmodified GNU Public License. This basically means that you
-      are free to use it in any way that you wish as well as modify it as you desire. See the file
-        <filename>GPL.txt</filename> for more details. In addition, this document is also free (as
-      in speech) and may be distributed and modified under the terms of the GNU Free Documentation
-      License. See the file <filename>GFDL.txt</filename> for more details.</para>
 
   </preface>
 

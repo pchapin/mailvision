@@ -57,9 +57,9 @@
     will support IMAP communications and the various standards associated with IMAP.</para>
 
   <para>In addition, the format of email messages as defined by RFC-5322 is a very old format,
-    dating orginally back to the 1980s. A more modern approach to formatting structured and
+    dating originally back to the 1980s. A more modern approach to formatting structured and
     semi-structured documents is to use XML. The <ulink url="http://www.openhealth.org/xmtp/"
-      >XMTP</ulink> proposal, as well as my own XEmail proposal are both attempts to to define
+      >XMTP</ulink> proposal, as well as my own XEmail proposal are both attempts to define
     an XML format for email messages. MailStop currently uses XEmail as a format for storing
     messages in abstract (post-parsed) form. A future version of MailStop may support XMTP as
     well.</para>

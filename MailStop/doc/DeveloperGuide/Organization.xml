@@ -7,6 +7,6 @@
 
   <para>This chapter describes how MailStop is organized at a high level. The basic packages
     that comprise the program and how they interact are outlined. See the specific documentation
-    for each package, or the packages's source code itself for details.</para>
+    for each package, or the package's source code itself for details.</para>
 
 </chapter>
