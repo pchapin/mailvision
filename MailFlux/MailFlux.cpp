@@ -1,6 +1,6 @@
 /*! \file    MailFlux.cpp
  *  \brief   The MailFlux main program.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  *
  * This program is a simple SMTP server. It is intended to primarily support debugging and
  * educational goals. See the documentation folder for more information.

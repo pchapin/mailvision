@@ -1,6 +1,6 @@
 /*! \file    support.hpp
  *  \brief   Declaration of various helper functions used by the MailFlux project.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #ifndef SUPPORT_H

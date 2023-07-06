@@ -1,6 +1,6 @@
 /*! \file    Spool.cpp
  *  \brief   Implementation of spool handling functions.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 // Standard C++

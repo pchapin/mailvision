@@ -1,6 +1,6 @@
 /*! \file    ServerConnection.cpp
  *  \brief   Implementation of server-side SMTP connections.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #include <cstring>

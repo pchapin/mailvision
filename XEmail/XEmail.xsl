@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 
 <!-- FILE   : XEmail.xsl
-     AUTHOR : Peter C. Chapin <PChapin@vtc.vsc.edu>
+     AUTHOR : Peter Chapin <spicacality@kelseymountain.org>
      SUBJECT: Style sheet to convert XEmail instance documents into HTML.
 -->
 
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:email="http://www.vtc.edu/XML/XEmail" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  xmlns:email="http://www.kelseymountain.org/XML/XEmail" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <xsl:output method="html"/>
 

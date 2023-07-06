@@ -9,4 +9,4 @@ documentation and tests execute the following:
 Project files for the CLion IDE are also available.
 
 Peter Chapin  
-chapinp@proton.me  
+spicacality@kelseymountain.org  

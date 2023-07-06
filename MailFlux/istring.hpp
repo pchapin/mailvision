@@ -1,6 +1,6 @@
 /*! \file    ClientConnection.cpp
  *  \brief   Case insensitive standard strings.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #ifndef ISTRING_HPP

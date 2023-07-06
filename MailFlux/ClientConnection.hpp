@@ -1,6 +1,6 @@
 /*! \file    ClientConnection.hpp
  *  \brief   Interface to the client connection class.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #ifndef CLIENTCONNECTION_HPP

@@ -1,6 +1,6 @@
 /*! \file    ClientConnection.cpp
  *  \brief   Implementation of client-side SMTP connections.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #include <cstring>

@@ -1,7 +1,7 @@
 #
 # FILE        : Makefile
 # SUBJECT     : Makefile for the MailFlux project.
-# AUTHOR      : (C) Copyright 2023 by Peter C. Chapin
+# AUTHOR      : (C) Copyright 2023 by Peter Chapin
 #
 
 # Cygwin doesn't seem to understand the -pthread option. Does that mean it doesn't properly

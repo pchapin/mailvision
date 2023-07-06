@@ -1,6 +1,6 @@
 /*! \file    Message.hpp
  *  \brief   Interface to a class that abstracts email messages.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #ifndef MESSAGE_HPP

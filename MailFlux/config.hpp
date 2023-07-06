@@ -1,6 +1,6 @@
 /*! \file    config.hpp
  *  \brief   ???
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #ifndef CONFIG_HPP

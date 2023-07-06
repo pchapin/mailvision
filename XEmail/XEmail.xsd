@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- FILE   : XEmail.xsd
-     AUTHOR : Peter C. Chapin <PChapin@vtc.vsc.edu>
+     AUTHOR : Peter Chapin <spicacality@kelseymountain.org>
      SUBJECT: XML schema for describing email messages.
      
 This markup describes email messages. It is intended to be eventually be a replacement for the
@@ -8,8 +8,8 @@ RFC-2822 + MIME standard. It has a long way to go.
 
  -->
 
-<xs:schema xmlns="http://www.vtc.edu/XML/XEmail" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://www.vtc.edu/XML/XEmail">
+<xs:schema xmlns="http://www.kelseymountain.org/XML/XEmail" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.kelseymountain.org/XML/XEmail">
 
   <xs:element name="message-group">
     <xs:annotation>

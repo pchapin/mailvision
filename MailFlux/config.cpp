@@ -1,6 +1,6 @@
 /*! \file    config.cpp
  *  \brief   ???
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #include <cstdlib>
@@ -20,7 +20,7 @@ namespace Support {
         bool   personalized;
 
         // I don't believe this is necessary, but to be on the safe side...
-        dictionary_entry() : personalized(false) { }
+        dictionary_entry( ) : personalized( false ) { }
     };
 
     // This is the dictionary. This should really be upgraded to a map someday. The reason it's
@@ -44,9 +44,9 @@ namespace Support {
      * function defines the meaning of "white space" in a configuration file. I you want to make
      * changes to what is and is not considered white space, change only this function.
      */
-    static bool is_white(char ch)
+    static bool is_white( char ch )
     {
-        if (ch == ' ' || ch == '\t' || ch == '\f') return true;
+        if( ch == ' ' || ch == '\t' || ch == '\f' ) return true;
         return false;
     }
 
@@ -55,13 +55,13 @@ namespace Support {
      * Return true if the given string is blank. A blank string is one that has nothing in it,
      * has only white space in it, or contains only a possibly indented comment.
     */
-    static bool blank_line(const string &the_line)
+    static bool blank_line( const string &the_line )
     {
-        const char *p = the_line.c_str();
+        const char *p = the_line.c_str( );
 
-        while (*p) {
-            if (*p == comment_char) return true;
-            if ( !is_white(*p) ) return false;
+        while( *p ) {
+            if( *p == comment_char ) return true;
+            if(  !is_white( *p ) ) return false;
             p++;
         }
         return true;
@@ -72,31 +72,31 @@ namespace Support {
      * Remove trailing white space or comments from the given string. There is no error checking
      * on the string handling.
     */
-    static void trim_string(string &the_string)
+    static void trim_string( string &the_string )
     {
-        const char *start = the_string.c_str();
+        const char *start = the_string.c_str( );
         const char *p;
 
         // First let's see if there is a comment in this string. If so, kill it.
-        if ((p = strchr(start, comment_char)) != 0) {
-            the_string = the_string.substr(0, p - start);
-            start = the_string.c_str();
+        if( ( p = strchr( start, comment_char ) ) != 0 ) {
+            the_string = the_string.substr( 0, p - start );
+            start = the_string.c_str( );
             // Refresh 'start' since the trim operation invalidated it.
         }
     
         // If the string has zero size we are done.
-        if (the_string.size() == 0) return;
+        if( the_string.size( ) == 0 ) return;
 
         // Next let's jump to the end and back up over white space.
-        p = strchr(start, '\0');
+        p = strchr( start, '\0' );
         --p;
-        while (is_white(*p) && p != start) p--;
+        while( is_white( *p ) && p != start ) p--;
 
         // If the loop above broke because of a non-white space, retract one step.
-        if (!is_white(*p)) p++;
+        if( !is_white( *p ) ) p++;
 
         // Chop, hack, and slash.
-        the_string = the_string.substr(0, p - start);
+        the_string = the_string.substr( 0, p - start );
     }
 
 
@@ -106,54 +106,54 @@ namespace Support {
      * "=VALUE" assigns the string "VALUE" to the name "". This might be useful for some
      * programs. This behavior is currently undocumented.
     */
-    static void analyze_line(const string &the_line, bool personalized)
+    static void analyze_line( const string &the_line, bool personalized )
     {
-        const char *p = the_line.c_str();
+        const char *p = the_line.c_str( );
         bool            happy = false;  // =true if this line has the right syntax.
         dictionary_entry temp;
 
         temp.personalized = personalized;
 
-        if (blank_line(the_line)) return;
-        while (*p && is_white(*p)) p++;
+        if( blank_line( the_line ) ) return;
+        while( *p && is_white( *p ) ) p++;
 
         // Copy the first word into the temporary dictionary entry.
-        while (*p && *p != '=' && !is_white(*p)) {
-            temp.name.append(1, *p++);
+        while( *p && *p != '=' && !is_white( *p ) ) {
+            temp.name.append( 1, *p++ );
         }
         
-        while (*p && is_white(*p)) p++;
+        while( *p && is_white( *p ) ) p++;
 
-        if (*p++ == '=') {
+        if( *p++ == '=' ) {
             // Ok, the syntax is good enough.
             happy = true;
 
-            while (*p && is_white(*p)) p++;
+            while( *p && is_white( *p ) ) p++;
 
             // Copy to the end of the line into the temporary dictionary entry. Note that this
             // behavior includes embeded white spaces in the value, and it also includes
             // trailing white spaces.
             // 
-            while (*p) temp.value.append(1, *p++);
-            trim_string(temp.value);
+            while( *p ) temp.value.append( 1, *p++ );
+            trim_string( temp.value );
         }
 
         // If the syntax looks good, then lets add this information to the dictionary. Otherwise
         // we'll just ignore this line.
         // 
-        if (happy) {
-            list<dictionary_entry>::iterator stepper = the_dictionary.begin();
+        if( happy ) {
+            list<dictionary_entry>::iterator stepper = the_dictionary.begin( );
 
-            while (stepper != the_dictionary.end()) {
-                if (stepper->name == temp.name) {
+            while( stepper != the_dictionary.end( ) ) {
+                if( stepper->name == temp.name ) {
                     *stepper = temp;
                     break;
                 }
                 stepper++;
             }
 
-            if (stepper == the_dictionary.end()) {
-                the_dictionary.push_back(temp);
+            if( stepper == the_dictionary.end( ) ) {
+                the_dictionary.push_back( temp );
             }
         }
     }
@@ -162,14 +162,14 @@ namespace Support {
     /*!
      * There is no error checking on the handling of string or the reading of the file.
      */
-    static void process_config_file(ifstream &the_file, bool personalized)
+    static void process_config_file( ifstream &the_file, bool personalized )
     {
-        for (;;) {
+        while( true ) {
             string line;
 
-            getline(the_file, line);
-            if (!the_file && line.size() == 0) return;
-            analyze_line(line, personalized);
+            getline( the_file, line );
+            if( !the_file && line.size( ) == 0 ) return;
+            analyze_line( line, personalized );
         }
     }
 
@@ -195,22 +195,22 @@ namespace Support {
      * \return There is no error return. This function does not complain if it can't open the
      * configuration files.
      */
-    void read_config_files(const char *Path)
+    void read_config_files( const char *path )
     {
         ifstream primary_config;
         ifstream secondary_config;
 
-        primary_config.open(Path);
-        if (primary_config)
-            process_config_file(primary_config, false);
+        primary_config.open( path );
+        if( primary_config )
+            process_config_file( primary_config, false );
 
         string *secondary_config_name =
-            lookup_parameter("PERSONAL_CONFIGURATION");
+            lookup_parameter( "PERSONAL_CONFIGURATION" );
 
-        if (secondary_config_name != 0) {
-            secondary_config.open(secondary_config_name->c_str());
-            if (!secondary_config) return;
-            process_config_file(secondary_config, true);
+        if( secondary_config_name != 0 ) {
+            secondary_config.open( secondary_config_name->c_str( ) );
+            if( !secondary_config ) return;
+            process_config_file( secondary_config, true );
         }
     }
 
@@ -219,7 +219,7 @@ namespace Support {
     /*!
      * The dictionary of (name, value) pairs is searched using a case sensitive comparision on
      * 'name'. The pointer returned may be invalidated if more items are added to the dictionary
-     * by register_parameter().
+     * by register_parameter( ).
      *
      * \param name The name to look up.
      *
@@ -227,12 +227,12 @@ namespace Support {
      * name, a NULL pointer is returned. The object pointed at by the return value can be
      * modified. When that object is looked up again, the new value will be returned.
      */
-    string *lookup_parameter(const char *name)
+    string *lookup_parameter( const char *name )
     {
-        list<dictionary_entry>::iterator stepper = the_dictionary.begin();
+        list<dictionary_entry>::iterator stepper = the_dictionary.begin( );
 
-        while (stepper != the_dictionary.end()) {
-            if (stepper->name == name) return &stepper->value;
+        while( stepper != the_dictionary.end( ) ) {
+            if( stepper->name == name ) return &stepper->value;
             stepper++;
         }
         return 0;
@@ -268,18 +268,18 @@ namespace Support {
         temp.value        = value;
         temp.personalized = personalized;
 
-        list<dictionary_entry>::iterator stepper = the_dictionary.begin();
+        list<dictionary_entry>::iterator stepper = the_dictionary.begin( );
         
-        while (stepper != the_dictionary.end()) {
-            if (stepper->name == name) {
+        while( stepper != the_dictionary.end( ) ) {
+            if( stepper->name == name ) {
                 *stepper = temp;
                 break;
             }
             stepper++;
         }
 
-        if (stepper == the_dictionary.end()) {
-            the_dictionary.push_back(temp);
+        if( stepper == the_dictionary.end( ) ) {
+            the_dictionary.push_back( temp );
         }
     }
 
@@ -291,22 +291,22 @@ namespace Support {
      * name PERSONAL_CONFIGURATION in the dictionary. If no personal configuration file is
      * specified this function has no effect.
      */
-    void write_config_file()
+    void write_config_file( )
     {
         string *personal_config_name =
-            lookup_parameter("PERSONAL_CONFIGURATION");
-        if (personal_config_name == 0) return;
+            lookup_parameter( "PERSONAL_CONFIGURATION" );
+        if( personal_config_name == 0 ) return;
 
-        ofstream config_file(personal_config_name->c_str());
-        if (!config_file) return;
+        ofstream config_file( personal_config_name->c_str( ) );
+        if( !config_file ) return;
 
         list<dictionary_entry>::iterator stepper;
 
-        for (stepper  = the_dictionary.begin();
-             stepper != the_dictionary.end();
-             stepper++) {
+        for( stepper  = the_dictionary.begin( );
+             stepper != the_dictionary.end( );
+             stepper++ ) {
 
-            if (!stepper->personalized) continue;
+            if( !stepper->personalized ) continue;
             config_file << stepper->name << "=" << stepper->value << endl;
         }
     }

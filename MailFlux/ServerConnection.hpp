@@ -1,6 +1,6 @@
 /*! \file    ServerConnection.hpp
  *  \brief   Interface to server-side SMTP connections.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #ifndef SERVERCONNECTION_HPP

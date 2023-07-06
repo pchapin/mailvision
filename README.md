@@ -15,4 +15,4 @@ resources (test fixtures, libraries, etc). The subprojects are:
 + XEmail: An XML Schema for email messages to replace RFC-5822 and MIME.
 
 Peter Chapin  
-chapinp@proton.me  
+spicacality@kelseymountain.org  

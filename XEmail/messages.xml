@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="XEmail.xsl"?>
 <!-- FILE   : messages.xml
-     AUHTOR : Peter C. Chapin <PChapin@vtc.vsc.edu>
+     AUHTOR : Peter Chapin <spicaclity@kelseymountain.org>
      SUBJECT: Example email document.
 -->
-<email:message-group xmlns:email="http://www.vtc.edu/XML/XEmail"
-  xsi:schemaLocation="http://www.vtc.edu/XML/XEmail XEmail.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"
+<email:message-group xmlns:email="http://www.kelseymountain.org/XML/XEmail"
+  xsi:schemaLocation="http://www.kelseymountain.org/XML/XEmail XEmail.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
@@ -14,14 +14,14 @@
       <To>
         <address>
           <full-name>Sam Colwell</full-name>
-          <email>scolwell@lemuria.cis.vtc.edu</email>
+          <email>scolwell@lemuria.cis.vermontstate.edu</email>
         </address>
       </To>
       <Date>2009-03-08T23:00:00-05:00</Date>
       <From>
         <address>
-          <full-name>Peter C. Chapin</full-name>
-          <email>Peter.Chapin@vtc.vsc.edu</email>
+          <full-name>Peter Chapin</full-name>
+          <email>peter.chapin@vermontstate.edu</email>
         </address>
       </From>
       <Subject>This is a test message.</Subject>
@@ -51,26 +51,26 @@
     <header>
       <To>
         <address>
-          <email>pchapin-cis3152@cis.vtc.edu</email>
+          <email>pchapin-cis3152@cis.vermontstate.edu</email>
         </address>
         <address>
-          <email>pchapin-cis4040@cis.vtc.edu</email>
+          <email>pchapin-cis4040@cis.vermontstate.edu</email>
         </address>
         <address>
-          <email>pchapin-cis4050@cis.vtc.edu</email>
+          <email>pchapin-cis4050@cis.vermontstate.edu</email>
         </address>
       </To>
       <Date>2009-03-08T19:01:00-05:00</Date>
       <From>
         <address>
-          <full-name>Peter C. Chapin</full-name>
-          <email>pchapin@cis.vtc.edu</email>
+          <full-name>Peter Chapin</full-name>
+          <email>pchapin@cis.vermontstate.edu</email>
         </address>
       </From>
-      <MessageID>0123456789ABCDEF@cis.vtc.edu</MessageID>
+      <MessageID>0123456789ABCDEF@cis.vermontstate.edu</MessageID>
       <References>
-        <ID>FEDCBA9876543210@vtc.vsc.edu</ID>
-        <ID>FEDCBA9876543210@cis.vtc.edu</ID>
+        <ID>FEDCBA9876543210@verontstate.edu</ID>
+        <ID>FEDCBA9876543210@cis.vermontstate.edu</ID>
       </References>
       <Subject>Only six weeks to go!</Subject>
     </header>

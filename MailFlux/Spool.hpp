@@ -1,6 +1,6 @@
 /*! \file    Spool.hpp
  *  \brief   Interface to spool handling functions.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #ifndef SPOOL_HPP

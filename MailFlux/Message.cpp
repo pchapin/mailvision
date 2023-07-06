@@ -1,6 +1,6 @@
 /*! \file    Message.cpp
  *  \brief   Implementation of a class that abstracts email messages.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #include "Message.hpp"

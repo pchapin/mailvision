@@ -1,6 +1,6 @@
 /*! \file    ClientConnection.cpp
  *  \brief   Interface to the Console.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  */
 
 #ifndef CONSOLE_HPP

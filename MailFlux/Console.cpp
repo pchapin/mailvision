@@ -1,6 +1,6 @@
 /*! \file    Console.cpp
  *  \brief   Implementation of the console.
- *  \author  Peter Chapin <chapinp@proton.me>
+ *  \author  Peter Chapin <spicacality@kelseymountain.org>
  *
  * All console handling functions are in namespace Console. They make use of the curses library.
  * Before any function uses that library it first grabs a master mutex on the assumption that
