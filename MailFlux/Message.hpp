@@ -58,15 +58,15 @@ public:
     // Accessor methods just return references to internal data. This should be made better.
 
     //! Return the email address of the message sender.
-    const istring &get_sender( ) const
+    [[nodiscard]] const istring &get_sender( ) const
     { return sender; }
 
     //! Return a list of recipient email addresses.
-    const std::vector<istring> &get_recipients( ) const
+    [[nodiscard]] const std::vector<istring> &get_recipients( ) const
     { return recipients; }
 
     //! Return the message text.
-    const std::vector<istring> &get_text( ) const
+    [[nodiscard]] const std::vector<istring> &get_text( ) const
     { return text; }
 
 private:

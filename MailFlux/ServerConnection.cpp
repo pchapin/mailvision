@@ -85,7 +85,7 @@ istring ServerConnection::line_in( )
 
 
 //! Write a line of text to the connection.
-void ServerConnection::line_out( const char *line )
+void ServerConnection::line_out( const char *line ) const
 {
     if( line == nullptr )
         throw invalid_argument( "ServerConnection::line_out" );
@@ -330,7 +330,7 @@ void ServerConnection::doWQUIT( const istring &from_sender )
  * data on the connection. This class assumes a connection with the client has been previously
  * established.
  *
- * \param handle The socket handle of the connection with the client. 
+ * \param handle The socket handle of the connection with the client.
  */
 ServerConnection::ServerConnection( int handle )
 {
@@ -343,20 +343,8 @@ ServerConnection::ServerConnection( int handle )
 }
 
 
-//! Recover resources.
-/*!
- * The destructor does not close the connection with the client. Since this connection was
- * established before the object was constructed, it should be closed after the object is
- * destroyed.
-*/
-ServerConnection::~ServerConnection( )
-{
-    // No actions needed.
-}
-
-
 //! Have an SMTP conversation with the client.
-/*! 
+/*!
  * This method executes the full SMTP conversation with the client, accepting as many mail
  * messages as the client wants.
 */

@@ -27,7 +27,6 @@
 #include <sys/socket.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#include <string.h>
 #include <unistd.h>
 
 // MailFlux
@@ -180,7 +179,7 @@ void *accept_loop( void *arg )
             return nullptr;
         }
 
-        // Display informational message.
+        // Display an informational message.
         string client_info = "Accepted client connection from: ";
         inet_ntop( AF_INET, &client_address.sin_addr, buffer, BUFFER_SIZE );
         client_info += buffer;

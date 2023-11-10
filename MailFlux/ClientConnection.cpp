@@ -41,7 +41,7 @@ istring ClientConnection::line_in( )
 
 
 //! Write a line of text to the connection.
-void ClientConnection::line_out( const char *line )
+void ClientConnection::line_out( const char *line ) const
 {
     if( line == nullptr )
         throw invalid_argument( "ServerConnection::line_out" );
@@ -72,19 +72,6 @@ ClientConnection::ClientConnection( int handle, const Message &the_message )
     buffer_index = 0;
     socket_handle = handle;
 }
-
-
-//! Recover resources.
-/*!
- * The destructor does not close the connection with the server. Since this connection was
- * established before the object was constructed, it should be closed after the object is
- * destroyed.
- */
-ClientConnection::~ClientConnection( )
-{
-    // No actions needed.
-}
-
 
 //! Have an SMTP conversation with the server.
 /*!

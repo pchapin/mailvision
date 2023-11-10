@@ -17,21 +17,20 @@
 class ClientConnection {
 public:
     ClientConnection( int handle, const Message &the_message );
-
-    ~ClientConnection( );
+    ~ClientConnection( ) = default;
 
     void doSMTP( );
 
 private:
     static const int MAX_BUFFER_SIZE = 128;
-    char buffer[MAX_BUFFER_SIZE + 1]; //!< Holds raw text from the client.
-    int buffer_size;               //!< Amount of valid text in buffer.
-    int buffer_index;              //!< "Current point" in buffer.
-    int socket_handle;             //!< Client socket.
+    char    buffer[MAX_BUFFER_SIZE + 1]; //!< Holds raw text from the client.
+    ssize_t buffer_size;                 //!< Amount of valid text in buffer.
+    int     buffer_index;                //!< "Current point" in buffer.
+    int     socket_handle;               //!< Client socket.
 
     istring line_in( );
 
-    void line_out( const char *line );
+    void line_out( const char *line ) const;
 
     // Make copying illegal.
     ClientConnection( const ClientConnection & );

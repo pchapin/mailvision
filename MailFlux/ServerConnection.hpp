@@ -18,7 +18,7 @@ class ServerConnection {
 public:
     explicit ServerConnection( int handle );
 
-    ~ServerConnection( );
+    ~ServerConnection( ) = default;
 
     void doSMTP( );
 
@@ -28,16 +28,16 @@ private:
     };
 
     static const int MAX_BUFFER_SIZE = 128;
-    char buffer[MAX_BUFFER_SIZE + 1]; //!< Holds raw text from the client.
-    int buffer_size;               //!< Amount of valid text in buffer.
-    int buffer_index;              //!< "Current point" in buffer.
-    int socket_handle;             //!< Client socket.
-    state current_state;             //!< Current state of the SMTP transaction.
-    Message email;                     //!< Accumulating email message.
+    char    buffer[MAX_BUFFER_SIZE + 1]; //!< Holds raw text from the client.
+    ssize_t buffer_size;                 //!< Amount of valid text in buffer.
+    int     buffer_index;                //!< "Current point" in buffer.
+    int     socket_handle;               //!< Client socket.
+    state   current_state;               //!< Current state of the SMTP transaction.
+    Message email;                       //!< Accumulating email message.
 
     istring line_in( );
 
-    void line_out( const char *line );
+    void line_out( const char *line ) const;
 
     void error_out( const char *line );
 

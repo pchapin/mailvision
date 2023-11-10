@@ -102,12 +102,12 @@ namespace {
         int handle;
 
         std::string *next_server = Support::lookup_parameter( "NEXT_SERVER" );
-        if( next_server == 0 )
+        if( next_server == nullptr )
             throw Spool::SpoolError( "No next server defined" );
 
         // FIXME: Change to gethostbyname to gethostbyname_r for thread safety.
         hostent *host_information = gethostbyname( next_server->c_str( ));
-        if( host_information == 0 )
+        if( host_information == nullptr )
             throw Spool::SpoolError( "Unable to look up next server address" );
 
         handle = socket( PF_INET, SOCK_STREAM, 0 );
@@ -134,13 +134,13 @@ namespace {
      * This is the spool handling thread function. It wakes up periodically and tries to send
      * (or deliver) every message it finds in the spool.
      */
-    void *spool_loop( void * )
+    [[noreturn]] void *spool_loop( void * )
     {
         vector<string> file_names;
         DIR *scan_state;
         dirent *directory_entry;
 
-        for( ;; ) {
+        while( true ) {
             // Catch all possible exceptions and keep going.
             try {
                 sleep( 15 );
@@ -149,11 +149,11 @@ namespace {
                 // Scan the spool directory and make a list of all files.
                 // FIXME: If an exception is thrown while the lock is held deadlock occurs.
                 pthread_mutex_lock( &spool_lock );
-                if(( scan_state = opendir( spool_directory.c_str( ))) == 0 ) {
+                if(( scan_state = opendir( spool_directory.c_str( ))) == nullptr ) {
                     Console::put_exception_line( "Can't scan spool directory" );
                 }
                 else {
-                    while(( directory_entry = readdir( scan_state )) != 0 ) {
+                    while(( directory_entry = readdir( scan_state )) != nullptr ) {
                         if( directory_entry->d_name[0] == '.' ) continue;
                         file_names.push_back( spool_directory + "/" + directory_entry->d_name );
                     }
@@ -186,7 +186,6 @@ namespace {
                 Console::put_exception_line( "Unexpected exception in spool thread" );
             }
         }
-        return nullptr;
     }
 
 } // End of anonymous namespace.
@@ -207,7 +206,7 @@ namespace Spool {
 
         // Get the spool directory name. Abort if there is no such name defined.
         string *temp = Support::lookup_parameter( "SPOOL" );
-        if( temp == 0 ) throw SpoolError( "No spool directory specified" );
+        if( temp == nullptr ) throw SpoolError( "No spool directory specified" );
         spool_directory = *temp;
 
         ostringstream message_formatter;
@@ -289,4 +288,3 @@ namespace Spool {
     }
 
 }
-

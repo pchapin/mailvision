@@ -77,15 +77,15 @@ namespace Support {
         const char *start = the_string.c_str( );
         const char *p;
 
-        // First let's see if there is a comment in this string. If so, kill it.
-        if( ( p = strchr( start, comment_char ) ) != 0 ) {
+        // First, let's see if there is a comment in this string. If so, kill it.
+        if( ( p = strchr( start, comment_char ) ) != nullptr ) {
             the_string = the_string.substr( 0, p - start );
             start = the_string.c_str( );
             // Refresh 'start' since the trim operation invalidated it.
         }
-    
+
         // If the string has zero size we are done.
-        if( the_string.size( ) == 0 ) return;
+        if( the_string.empty() ) return;
 
         // Next let's jump to the end and back up over white space.
         p = strchr( start, '\0' );
@@ -121,7 +121,7 @@ namespace Support {
         while( *p && *p != '=' && !is_white( *p ) ) {
             temp.name.append( 1, *p++ );
         }
-        
+
         while( *p && is_white( *p ) ) p++;
 
         if( *p++ == '=' ) {
@@ -133,16 +133,16 @@ namespace Support {
             // Copy to the end of the line into the temporary dictionary entry. Note that this
             // behavior includes embeded white spaces in the value, and it also includes
             // trailing white spaces.
-            // 
+            //
             while( *p ) temp.value.append( 1, *p++ );
             trim_string( temp.value );
         }
 
         // If the syntax looks good, then lets add this information to the dictionary. Otherwise
         // we'll just ignore this line.
-        // 
+        //
         if( happy ) {
-            list<dictionary_entry>::iterator stepper = the_dictionary.begin( );
+            auto stepper = the_dictionary.begin( );
 
             while( stepper != the_dictionary.end( ) ) {
                 if( stepper->name == temp.name ) {
@@ -168,7 +168,7 @@ namespace Support {
             string line;
 
             getline( the_file, line );
-            if( !the_file && line.size( ) == 0 ) return;
+            if( !the_file && line.empty() ) return;
             analyze_line( line, personalized );
         }
     }
@@ -229,13 +229,13 @@ namespace Support {
      */
     string *lookup_parameter( const char *name )
     {
-        list<dictionary_entry>::iterator stepper = the_dictionary.begin( );
+        auto stepper = the_dictionary.begin( );
 
         while( stepper != the_dictionary.end( ) ) {
             if( stepper->name == name ) return &stepper->value;
             stepper++;
         }
-        return 0;
+        return nullptr;
     }
 
 
@@ -245,7 +245,7 @@ namespace Support {
      * dictionary before read_config_files() is called. This simplifies the program by allowing
      * places where configuration information is needed to ignore the possibility of default
      * values.
-     *  
+     *
      * \param name The name to add to the dictionary. The string pointed at by this parameter is
      * copied.
      *
@@ -268,8 +268,8 @@ namespace Support {
         temp.value        = value;
         temp.personalized = personalized;
 
-        list<dictionary_entry>::iterator stepper = the_dictionary.begin( );
-        
+        auto stepper = the_dictionary.begin( );
+
         while( stepper != the_dictionary.end( ) ) {
             if( stepper->name == name ) {
                 *stepper = temp;
@@ -295,7 +295,7 @@ namespace Support {
     {
         string *personal_config_name =
             lookup_parameter( "PERSONAL_CONFIGURATION" );
-        if( personal_config_name == 0 ) return;
+        if( personal_config_name == nullptr ) return;
 
         ofstream config_file( personal_config_name->c_str( ) );
         if( !config_file ) return;

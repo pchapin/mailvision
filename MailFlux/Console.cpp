@@ -185,7 +185,7 @@ namespace Console {
 
 
     //! Outputs a line of debugging information to the asynchronous display area.
-    /*! 
+    /*!
      * This function prints debug messages and other messages about the program's internal state
      * that might not be interesting to ordinary users. Currently these messages are printed
      * unconditionally, but in the future it may be possible to enable/disable the display of
@@ -214,7 +214,7 @@ namespace Console {
             banner( );
 
             string line;
-            while( 1 ) {
+            while( true ) {
                 {
                     CursesMutex lock;
                     wprintw( interaction, "> " );
