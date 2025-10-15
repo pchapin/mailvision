@@ -1,19 +1,11 @@
 #
 # FILE        : Makefile
 # SUBJECT     : Makefile for the MailFlux project.
-# AUTHOR      : (C) Copyright 2023 by Peter Chapin
+# AUTHOR      : (C) Copyright 2025 by Peter Chapin
 #
 
-# Cygwin doesn't seem to understand the -pthread option. Does that mean it doesn't properly
-# support multi-threaded programs or does it mean that -pthread is just redundant on Cygwin?
-#
-ifdef CYGWIN
-THREAD_FLAGS =
-CURSES_LIB   = -lcurses
-else
 THREAD_FLAGS = -pthread
 CURSES_LIB   = -lncurses
-endif
 
 CPPFLAGS=-Wall -g -DDEBUG -std=c++20 $(THREAD_FLAGS)
 OBJS = MailFlux.o         \

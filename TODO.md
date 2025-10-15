@@ -2,12 +2,12 @@
 MailFlux
 ========
 
-+ Translate MailFlux from C++ to Ada, Keep the documentation up to date as this translation
-  proceeds.
-
++ ???
 
 MailStop
 ========
+
++ Make the project Alire-based.
 
 + Mock up some user interfaces for MailStop.
 
@@ -17,7 +17,7 @@ MailStop
 MailTalk
 ========
 
-+ ???
++ Create a placeholder project folder.
 
 XEmail
 ======

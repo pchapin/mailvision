@@ -1,5 +1,4 @@
-# Build artifacts specific to MailVision
+# Build artifacts specific to MailFlux
 *.o
 MailFlux
-MailFlux.exe
 doc/internal
